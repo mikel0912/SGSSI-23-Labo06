@@ -10,16 +10,16 @@ def calculate_sha256(filename):
     return sha256_hash.hexdigest()
 
 def comprobar_fila_condiciones(fila):
-    patron = re.compile(r'[0-9a-f]{8}(\t|\s+)[0-9a-f]{2}(\t|\s+)100')
+    patron = re.compile(b'[0-9a-f]{8}(\t|\s+)[0-9a-f]{2}(\t|\s+)100')
     return bool(patron.match(fila))
 
 def main(file1, file2):
     # Leer el contenido del primer archivo
-    with open(file1, 'r') as f1:
+    with open(file1, 'rb') as f1:
         content_file1 = f1.read()
     
     # Leer el contenido del segundo archivo
-    with open(file2, 'r') as f2:
+    with open(file2, 'rb') as f2:
         content_file2 = f2.read()
         line_count = sum(1 for line in f2)
     
