@@ -1,0 +1,1 @@
+from comprobacion.Labo06Act0 import main as comprobar
